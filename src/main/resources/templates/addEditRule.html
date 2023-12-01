@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add/Edit Rule</title>
+</head>
+<body>
+<h1 th:text="${rule.id} ? 'Edit Rule' : 'Add Rule'"></h1>
+<form th:action="@{/rules/save}" th:object="${rule}" method="post">
+    <input type="text" th:field="*{name}" placeholder="Rule Name"/>
+    <textarea th:field="*{expression}" placeholder="Rule Expression"></textarea>
+    <button type="submit">Save Rule</button>
+</form>
+</body>
+</html>

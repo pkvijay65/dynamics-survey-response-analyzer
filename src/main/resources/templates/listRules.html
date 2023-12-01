@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rule List</title>
+</head>
+<body>
+<h1>Rules</h1>
+<div>
+    <a href="/rules/add">Add New Rule</a>
+    <ul>
+        <li th:each="rule : ${rules}">
+            <span th:text="${rule.name}"></span>:
+            <a th:href="@{/rules/edit/{id}(id=${rule.id})}">Edit</a>
+            <a th:href="@{/rules/delete/{id}(id=${rule.id})}">Delete</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
